@@ -29,14 +29,17 @@ module.exports = function(sequelize, DataTypes) {
     },
     is_supporter_dj: {
       type: DataTypes.BOOLEAN,
+      defaultValue: false,
       allowNull: false
     },
     is_supporter_welcome: {
       type: DataTypes.BOOLEAN,
+      defaultValue: false,
       allowNull: false
     },
     is_supporter_car: {
       type: DataTypes.BOOLEAN,
+      defaultValue: false,
       allowNull: false
     }
   }, {

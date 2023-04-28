@@ -1,29 +1,13 @@
-module.exports = app => {
-  const path = require('path');
-  const users = require(path.join(__dirname, '..', 'controllers', 'user.controller.js'));
+const express = require('express');
+const userController = require('../controllers/user.controller.js');
+const makeExpressCallback = require('./makeCallback.js');
 
-  var router = require("express").Router();
+const router = express.Router();
 
-  // Create a new User
-  router.post("/", users.create);
+router.route('/kakao/code').get(makeExpressCallback(userController.getKakaoUserBeforeLogin));
 
-  // Retrieve all Users
-  router.get("/", users.findAll);
+router.route('/signin').post(makeExpressCallback(userController.signIn));
 
-  // Retrieve all published Users
-  router.get("/published", users.findAllPublished);
+router.route('/signup').post(makeExpressCallback(userController.signUp));
 
-  // Retrieve a single User with user_id
-  router.get("/:user_id", users.findOne);
-
-  // Update a User with user_id
-  router.put("/:user_id", users.update);
-
-  // Delete a User with user_id
-  router.delete("/:user_id", users.delete);
-
-  // Delete all Users
-  router.delete("/", users.deleteAll);
-
-  app.use('/api/users', router);
-};
+module.exports = router;

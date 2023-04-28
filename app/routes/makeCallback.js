@@ -10,6 +10,7 @@ module.exports = (controller) => (req, res) => {
     path: req.path,
     user: req.user,
     logger: req.logger,
+    session: req.session,
     source: {
       ip: req.ip,
       browser: req.get('User-Agent')
@@ -17,10 +18,10 @@ module.exports = (controller) => (req, res) => {
     headers: {
       'Content-Type': req.get('Content-Type'),
       Referer: req.get('referer'),
-      'User-Agent': req.get('User-Agent')
+      'User-Agent': req.get('User-Agent'),
+      "userid" : req.get('userid')
     }
   };
-
   // req.user coming from 'policies/token.js',
   // after the JWT token is parsed
   if (req.user) {

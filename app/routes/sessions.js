@@ -13,4 +13,13 @@ router.route('/sessions')
 router.route('/sessions/:session_id')
   .get(makeExpressCallback(sessionController.getSessionDetail));
 
+router.route('/sessions/:session_id/apply')
+  .post(makeExpressCallback(sessionController.applySession));
+
+router.route('/sessions/:session_id/attendees/:user_id')
+  .put(makeExpressCallback(sessionController.recordAttendance));
+
+router.route('/sessions/:session_id/supporters/:user_id')
+  .put(makeExpressCallback(sessionController.applyDailySupporter));
+
 module.exports = router;

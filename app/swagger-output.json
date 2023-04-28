@@ -1,0 +1,168 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "My API",
+    "description": "Description",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/sessions": {
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/sessions/{session_id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/sessions/{session_id}/apply": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/sessions/{session_id}/attendees/{user_id}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/": {
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      },
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      },
+      "delete": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/{session_id}": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      },
+      "put": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      },
+      "delete": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/published": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/{user_id}": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      },
+      "put": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      },
+      "delete": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    }
+  }
+}

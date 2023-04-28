@@ -11,7 +11,7 @@ const router = express.Router();
 // with a function that checks if the authentication token is present
 // in all requests and it's valid.
 router.use(session);
-router.use(sessionHistory);
+//router.use(sessionHistory);
 router.use(user);
 
 module.exports = router;
