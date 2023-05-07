@@ -15,6 +15,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    gender: {
+      type: DataTypes.STRING(10),
+      allowNull: true
+    },
+    age_range: {
+      type: DataTypes.STRING(10),
+      allowNull: true
+    },
     email: {
       type: DataTypes.STRING(191),
       allowNull: false,
@@ -28,6 +36,10 @@ module.exports = function(sequelize, DataTypes) {
     oauth_provider: {
       type: DataTypes.STRING(191),
       allowNull: false
+    },
+    refresh_token: {
+      type: DataTypes.STRING(191),
+      allowNull: true
     }
   }, {
     sequelize,

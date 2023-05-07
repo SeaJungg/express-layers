@@ -6,8 +6,8 @@ const router = express.Router();
 
 router.route('/kakao/code').get(makeExpressCallback(userController.getKakaoUserBeforeLogin));
 
-router.route('/signin').post(makeExpressCallback(userController.signIn));
-
 router.route('/signup').post(makeExpressCallback(userController.signUp));
+
+router.route('/token').post(makeExpressCallback(userController.postToken));
 
 module.exports = router;

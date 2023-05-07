@@ -19,7 +19,7 @@ router.route('/sessions/:session_id/apply')
 router.route('/sessions/:session_id/attendees/:user_id')
   .put(makeExpressCallback(sessionController.recordAttendance));
 
-router.route('/sessions/:session_id/supporters/:user_id')
+router.route('/sessions/:session_id/supporters/:user_id/toggle')
   .put(makeExpressCallback(sessionController.applyDailySupporter));
 
 module.exports = router;

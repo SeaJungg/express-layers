@@ -10,7 +10,7 @@ const doc = {
   schemes: ['http'],
 };
 
-const outputFile = './swagger-output.json';
+const outputFile = './swagger-output-to-be-confirmed.json';
 const endpointsFiles = ['./app.js'];
 
 /* NOTE: if you use the express Router, you must pass in the 

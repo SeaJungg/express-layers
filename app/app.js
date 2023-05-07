@@ -30,3 +30,10 @@ app.use(router);
 app.listen(process.env.PORT, function() {
     console.log(`App listening on port ${process.env.PORT}!`);
 });
+
+const path = require('path');
+
+app.get('/login-test', (req, res) => {
+    const filePath = path.join(__dirname, 'test.html');
+    return res.sendFile(filePath);
+});
