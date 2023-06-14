@@ -48,7 +48,7 @@ function generateRefreshToken(user_id) {
 
 module.exports = Object.freeze({
     getUser,
-    postToken: async (httpRequest) => {
+    refreshToken: async (httpRequest) => {
         try {
             const refreshToken = httpRequest.body.refresh_token
             if (refreshToken == null) throw new Error(401)

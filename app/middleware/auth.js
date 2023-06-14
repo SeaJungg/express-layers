@@ -1,8 +1,7 @@
 require('dotenv').config()
 const jwt = require('jsonwebtoken');
 
-
-module.exports = (req, res, next) => {
+function loginRequired(req, res, next) {
   const authHeader = req.headers.authorization;
 
   if (!authHeader) {
@@ -34,10 +33,13 @@ module.exports = (req, res, next) => {
   try {
     const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
     req.user = decodedToken;
-    console.log(req.user)
     next();
   } catch (error) {
     error.statusCode = 401;
     next(error);
   }
+}
+
+module.exports = {
+  loginRequired: loginRequired
 };

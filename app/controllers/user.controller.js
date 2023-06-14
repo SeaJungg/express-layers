@@ -3,12 +3,12 @@ const {
     signUp,
     signIn,
     getUser,
-    postToken
+    refreshToken
 } = require('../services/users');
 
 module.exports = Object.freeze({
     getKakaoUserBeforeLogin : (httpRequest) => getKakaoUserBeforeLogin(httpRequest),
     signUp : (httpRequest) => signUp(httpRequest),
     getUser : (httpRequest) => getUser(httpRequest),
-    postToken : (httpRequest) => postToken(httpRequest)
+    refreshToken : (httpRequest) => refreshToken(httpRequest)
 });
